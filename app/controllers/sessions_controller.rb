@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   	if user && user.authenticate(params[:session][:password])
   		#log in
       log_in user
+      remember user
       redirect_to user
   	else
   		flash.now[:danger] = 'Invalid emai/password combination'
@@ -15,5 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    redirect_to root_url
   end
 end
