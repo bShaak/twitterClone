@@ -1,2 +1,1 @@
-Just did listing 10.2
-continue right after the database migration for user activation.
+10.2 Password Reset.
